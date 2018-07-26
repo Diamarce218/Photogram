@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Makeitgram2</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>Makeitgram</title>
+    <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<body>
-  
-  <nav class="navbar navbar-expand-lg navbar-light">
-      <%= link_to 'Photogram', root_path, class: 'navbar-brand' %>
+  <body>
+     <nav class="navbar navbar-expand-lg navbar-light">
+      <%= link_to 'Makeitgram', root_path, class: 'navbar-brand' %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,17 +24,22 @@
       </div>
     </nav>
 
-  <div class="container">
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="wrapper">
             <% flash.each do |type, message| %>
+            <div class="alert alert-<%= flash_class type %> alert-dismissible fade show" role="alert">
               <%= message %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
             <% end %>
-            <br>
             <%= yield %>
           </div>
         </div>
       </div>
+    </div>
   </body>
-
 </html>
