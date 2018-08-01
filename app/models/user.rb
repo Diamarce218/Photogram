@@ -6,4 +6,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
+  has_many :coments
+
+  def name
+    "#{firstname} #{lastname}"
+  end
+
+
+  def self.getProfile(username)
+    find_by({username: username})
+  end
 end
