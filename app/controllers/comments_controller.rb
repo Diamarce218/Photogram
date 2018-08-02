@@ -2,10 +2,10 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def create
-    #@comment = Comment.new(comment_params)
+    @comment = Comment.new(comment_params)
     if @comment.save
-      #respond_to :js
-      redirect_to root_path
+      respond_to :js
+      #redirect_to root_path
     else
       redirect_to root_path, error: "Text can't be blank" 
     end
