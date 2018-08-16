@@ -104,7 +104,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Diana Herrán** - *Initial work* - [PurpleBooth](https://github.com/Diamarce218)
+* [**Diana Herrán**](https://github.com/Diamarce218) 
 
 
 ## Acknowledgments
